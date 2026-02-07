@@ -1,0 +1,15 @@
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMServiceScrape
+metadata:
+  name: nirn-proxy-monitor
+  namespace: nirn-system
+  labels:
+    app.kubernetes.io/instance: m-stack
+spec:
+  selector:
+    matchLabels:
+      app: nirn-proxy 
+  endpoints:
+  - port: metrics 
+    path: /metrics
+    interval: 15s
