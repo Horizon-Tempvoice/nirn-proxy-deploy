@@ -4,7 +4,7 @@ metadata:
   name: nirn-proxy-monitor
   namespace: nirn-system
   labels:
-    app.kubernetes.io/instance: m-stack
+    app.kubernetes.io/instance: vm-stack
 spec:
   selector:
     matchLabels:

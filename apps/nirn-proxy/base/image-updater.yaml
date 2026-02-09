@@ -1,0 +1,14 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: nirn-updater-config
+  namespace: argocd
+spec:
+  namespace: argocd
+  applicationRefs:
+    - namePattern: "nirn-system"
+      images:
+        - alias: "nirn"
+          imageName: "ghcr.io/davfsa/nirn-proxy:latest"
+          commonUpdateSettings:
+            updateStrategy: "latest"
